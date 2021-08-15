@@ -16,7 +16,7 @@ public class Main{
 	
 	private static void powerSet(int cnt, boolean [] selected) {
 		if(cnt == N) {
-			int sum = 0;
+			int sum = 00;
 			for(int i=0;i<N;i++) {
 				if(selected[i]) {
 					sum += arr[i];
