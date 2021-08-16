@@ -11,23 +11,28 @@ public class Main{
 	private static int N;
 	private static int S;
 	private static int [] arr;
-	private static int sCnt = 0;
-	private static StringBuilder sb= new StringBuilder();
+	private static int solCnt = 0;
+	//private static StringBuilder sb= new StringBuilder();
 	
 	private static void powerSet(int cnt, boolean [] selected) {
 		if(cnt == N) {
-			int sum = 00;
+			int sCnt = 0;
+			int sum = 0;
+			boolean flag = false;
 			for(int i=0;i<N;i++) {
 				if(selected[i]) {
+					//sb.append(arr[i]+" ");
 					sum += arr[i];
-					sb.append(sum+" ");
+					flag = true;
 				}
 			}
-			sb.append("="+sum+" ");
-			if(sum==S) 
+			//sb.append("sum:"+sum+" ");
+			if(sum==S && flag) {
 				sCnt++;
-			
-			sb.append("\n");
+			}
+			solCnt += sCnt;
+			//sb.append("="+sCnt+" ");
+			//sb.append("\n");
 			return;
 		}
 		selected[cnt] = true;
@@ -53,8 +58,8 @@ public class Main{
 		}
 		powerSet(0, new boolean[N]);
 		
-		bw.append(sb);
-		bw.append(sCnt+" ");
+		//bw.append(sb);
+		bw.append(solCnt+" ");
 		bw.flush();
 		bw.close();
 	}
