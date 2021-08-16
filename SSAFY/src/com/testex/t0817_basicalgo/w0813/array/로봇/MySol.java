@@ -3,7 +3,7 @@ package com.testex.t0817_basicalgo.w0813.array.로봇;
 import java.io.*;
 import java.util.StringTokenizer;
 
-public class Solution {
+public class MySol {
     //우 하 좌 상
     private static int dr [] = {0,1,0,-1};
     private static int dc [] = {1,0,-1,0};
