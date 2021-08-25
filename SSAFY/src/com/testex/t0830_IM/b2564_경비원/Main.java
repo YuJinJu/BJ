@@ -1,4 +1,4 @@
-package com.testex.t0830_IM.w0817.n2564_경비원;
+package com.testex.t0830_IM.b2564_경비원;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -11,7 +11,7 @@ class Pos {
     int c;
     int dir;
 
-    //dir로 위치가 정해지는 게 헷갈렸는데 객체로 좌표값을 지정해주니까 좌표값의 위치를 더 빨리 파악할 수 있다.
+    //dir에 의해 좌표 지정
     public Pos(int r, int c, int dir, int dis) {
         this.dir = dir;
 
@@ -58,7 +58,7 @@ public class Main {
             int dis = Integer.parseInt(st.nextToken()); //거리
 
             Pos p = new Pos(R, C, dir, dis);    //상점 객체생성, 좌표지정
-            storeList.add(p);    //저장
+            storeList.add(p);    //상점들 저장
         }
 
         //동근이
@@ -76,10 +76,10 @@ public class Main {
 
         //규칙성
         //동근이나 상점이 서로 반대편에 있을 때 거리는 두 가지 경우
-        // 1. (0,0)을 지나는 방법 - 두 좌표의 합
+        // 1. (0,0)을 지나는 방법 - 두 좌표의 합 (변수 a)
         // 2. (R,C)를 지나는 방법 - 변수 b 참고
 
-        //동근이나 상점이 양 옆이나 같은 라인에 있을 때 거리는 두 좌표의 차의 절대값의 합
+        //동근이나 상점이 양 옆이나 같은 라인에 있을 때 거리는 두 좌표 차의 절대값의 합
 
         for (Pos store : storeList) {    //리스트에 담긴 모든 상점
 
@@ -99,7 +99,7 @@ public class Main {
                 sum += Math.min(a, b);   // 두가지 방법 중 최소 거리를 골라 더해줌
 
             } else
-                sum += Math.abs(store.r - dong.r) + Math.abs(store.c - dong.c);//양 옆, 같은 라인에 있을 때
+                sum += Math.abs(store.r - dong.r) + Math.abs(store.c - dong.c);//양 옆 모서리나, 같은 라인에 있을 때
 
         }
         System.out.println(sum);
