@@ -1,4 +1,4 @@
-package com.testex.b2559_수열;
+package com.testex.t0830_IM.b2559_수열;
 
 import java.io.BufferedReader;
 import java.io.IOException;
