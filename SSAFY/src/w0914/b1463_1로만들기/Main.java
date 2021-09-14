@@ -12,7 +12,7 @@ import java.io.InputStreamReader;
  */
 
 /*
-min[1] = 1;
+min[1] = 0;
 min[2] = 1;
 min[3] = 1;
 
