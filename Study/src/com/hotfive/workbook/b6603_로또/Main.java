@@ -1,4 +1,4 @@
-package com.personal.b6603_로또;
+package com.hotfive.workbook.b6603_로또;
 
 import java.util.Arrays;
 import java.util.Scanner;

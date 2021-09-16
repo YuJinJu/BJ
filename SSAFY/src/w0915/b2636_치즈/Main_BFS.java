@@ -54,11 +54,20 @@ public class Main_BFS {
                     }
                     else if(map[nr][nc]==0){   //치즈가 없으면
                         q.add(new int[] {nr,nc});   // 큐에 좌표를 넣어준다
-                        System.out.println("add : ("+nr + ","+nc+")");
+                        //map[nr][nc] = 2;
                     }
 
                     visit[nr][nc] = true;   //방문처리
-                    System.out.println("visit:"+nr+","+nc);
+
+//                    for (int i = 0; i < map.length; i++) {
+//                        for (int j = 0; j < map[0].length; j++) {
+//                            System.out.print(map[i][j]+" ");
+//                        }
+//                        System.out.println();
+//                    }
+//                    System.out.println("----------------------");
+
+
                 }
             }
         }
@@ -68,3 +77,20 @@ public class Main_BFS {
         br.close();
     }
 }
+/*
+13 12
+0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 1 1 0 0 0
+0 1 1 1 0 0 0 1 1 0 0 0
+0 1 1 1 1 1 1 0 0 0 0 0
+0 1 1 1 1 1 0 1 1 0 0 0
+0 1 1 1 1 0 0 1 1 0 0 0
+0 0 1 1 0 0 0 1 1 0 0 0
+0 0 1 1 1 1 1 1 1 0 0 0
+0 0 1 1 1 1 1 1 1 0 0 0
+0 0 1 1 1 1 1 1 1 0 0 0
+0 0 1 1 1 1 1 1 1 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0
+
+*/
