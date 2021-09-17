@@ -8,7 +8,7 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class Main {
+public class Main_BFS {
     static int N;
     static int [][] map;
     static boolean [][] visisted;
@@ -35,14 +35,15 @@ public class Main {
                 if(i<0 || j<0 || i>=N || j>= N || visisted[i][j]||map[i][j]==0) continue;
                 // 집을 발견할 때..
                 homeCnt = 0;
-                dfs(new int []{i,j});   // dfs 탐색 시작
-                dangi.add(homeCnt);
+                bfs(new int []{i,j});   // bfs 탐색 시작
+
             }
         }
 
         System.out.println(dangi.size());
         Collections.sort(dangi);
-        for (int i: dangi) {
+        for (int i:
+             dangi) {
             System.out.println(i);
         }
         br.close();
@@ -50,18 +51,37 @@ public class Main {
         // 각 단지내 집의 수를 오름차순으로 정렬하여 한 줄에 하나씩 출력하시오
     }
 
-    private static void dfs(int[] v) {
+    private static void bfs(int[] v) {
+        Queue<int []> queue = new LinkedList<>();
+
+        // 한 단지의 첫번째 집부터 시작
+        queue.add(v);
         visisted[v[0]][v[1]] = true;
+
+        // 그 단지의 집 갯수 증가
         homeCnt++;
 
-        for (int d = 0; d < 4; d++) {
-            int nr = v[0] + dr[d];
-            int nc = v[1] + dc[d];
+        while (!queue.isEmpty()){
+            v = queue.poll();
 
-            if(nr<0||nc<0||nr>=N||nc>=N||visisted[nr][nc]||map[nr][nc]==0) continue;
-            dfs(new int[]{nr,nc});
+            // 사방탐색,방문여부,집존재여부 조건 확인
+            for (int d = 0; d < 4; d++) {
+                int nr = v[0] + dr[d];
+                int nc = v[1] + dc[d];
+
+                if(nr<0 || nc <0 || nr>=N || nc>=N || visisted[nr][nc]||map[nr][nc]==0) continue;
+
+                //조건 만족하면
+                queue.add(new int[] {nr,nc});
+                visisted[nr][nc] = true;
+
+                // 단지의 home 개수증가
+                homeCnt++;
+
+            }
         }
 
-
+        // bfs 끝나면,, 단지의 home이 다 탐색되었다는 의미.. 집의 개수를 저장해서 마무리
+        dangi.add(homeCnt);
     }
 }
