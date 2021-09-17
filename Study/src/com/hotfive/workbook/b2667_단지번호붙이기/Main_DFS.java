@@ -8,7 +8,7 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class Main {
+public class Main_DFS {
     static int N;
     static int [][] map;
     static boolean [][] visisted;
@@ -32,7 +32,7 @@ public class Main {
         visisted = new boolean[N][N];
         for (int i = 0; i < N; i++) {
             for (int j = 0; j < N; j++) {
-                if(i<0 || j<0 || i>=N || j>= N || visisted[i][j]||map[i][j]==0) continue;
+                if(visisted[i][j]||map[i][j]==0) continue;
                 // 집을 발견할 때..
                 homeCnt = 0;
                 dfs(new int []{i,j});   // dfs 탐색 시작
