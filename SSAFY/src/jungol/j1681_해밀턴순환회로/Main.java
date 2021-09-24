@@ -39,8 +39,8 @@ public class Main {
         br.close();
     }
 
-    private static void dfs(int r, int sum, int cnt) {
-        if(cnt == N){ // 마지막은 회사로 가야한다
+    private static void dfs(int r, int sum, int depth) {
+        if(depth == N){ // 마지막은 회사로 가야한다
             if(map[r][1] == 0) return;
             sum += map[r][1];
             min = Math.min(min,sum);
@@ -56,8 +56,8 @@ public class Main {
             if(visited[c] || map[r][c]==0 || sum + map[r][c] >= min) continue;
             visited[c] = true;
 
-            dfs(c,sum + map[r][c],cnt+1);  // sum += map[r][c] 하지 않고 재귀에 넣어줘야한다!
-            visited[c] = false; //
+            dfs(c,sum + map[r][c],depth+1);  // sum += map[r][c] 하지 않고 재귀에 넣어줘야한다!
+            visited[c] = false; //리턴하여 윗노드로 돌아가 다른 노드를 탐색하기 위해 방문체크를 해제해줘야한다
         }
 
     }
