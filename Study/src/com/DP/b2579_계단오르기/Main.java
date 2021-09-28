@@ -21,27 +21,23 @@ public class Main {
             stairs[n] = Integer.parseInt(br.readLine()); // 계단점수 : 10,000이하의 자연수
         }
         int max = Integer.MIN_VALUE;
-        int sum = stairs[N];  // 마지막 계단은 필수이기 때문에 미리 넣어두기
-        /*
-        계단 밟았을 때 (마지막계단 필수니까 마지막부터 해보기?)
-        한칸씩 / 두칸씩  - 즉 x 연속 두개는 안된다.. / 연속 3칸이동 안됨
 
-        끝에서 시작하는 방법은 두가지,,
-        6 5 x - n
+        // 이전 계단을 밟으면 이전이전은 못밟아
 
-        6 x 4 - x
-        6 x 4 - n
-        3개씩 묶어서...?
+        int [][] DP = new int[N+1][2];
+        DP[1][0] = 0;
+        DP[1][1] = stairs[1];
+//        DP[2][0] = DP[1][1]; // 0, 10 중에서
+//        DP[2][1] = 30;
 
-        6 5 x 3 2 x
-        6 5 x 3 x 1
-        6 x 4 x 3 2 x
-        6 x 4 x 3 x 1
-        6 x 4 3 x 2 1
-        6 x 4 3 x 2 x
-        */
+        for (int i = 2; i <= N; i++) {  // step
+            DP[i][0] = DP[i-1][1]; // 현재를 밟지 않으면 이전의 계단을 밟아야함
+            int case1 = DP[i-2][1] + stairs[i]; // 현재를 밟을때, 경우1: 이전을 밟지 않고 이전이전은 밟아 // 경우2: 이전을 밟고 이전이전은 밟지 않을 때
+            int case2 = DP[i-2][0] + stairs[i-1] + stairs[i];
+            DP[i][1] = Math.max(case1,case2);
+        }
 
-
+        System.out.println(DP[N][1]);
         br.close();
     }
 }
