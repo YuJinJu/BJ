@@ -1,4 +1,4 @@
-package com.BFS.b1261_알고스팟;
+package com.DP.BFS.b1261_알고스팟;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -23,20 +23,21 @@ public class Main {
         StringTokenizer st = new StringTokenizer(br.readLine());
         M = Integer.parseInt(st.nextToken());   // 가로 열
         N = Integer.parseInt(st.nextToken());   //  세로 행
-        map = new int[N+1][M+1];
-        min = new int[N+1][M+1];
+        map = new int[N+1][M+1];    // 벽의 상태
+        min = new int[N+1][M+1];    //r,c까지 최소한으로 부서야하는 벽의 개수를 담는 배열
         count = 0;
         for (int r = 1; r <= N; r++) {
             String str = br.readLine();
             for (int c = 1; c <= M; c++) {
-                map[r][c] = str.charAt(c-1)-'0';    // 0 빈방, 1 벽
-                if(r+c!=2) min[r][c] = Integer.MAX_VALUE;
+                map[r][c] = str.charAt(c-1)-'0';    // 0 빈방, 1 벽 입력
+                if(r+c!=2) min[r][c] = Integer.MAX_VALUE; // 1,1 은 시작점이므로 최소로부신벽갯수 0이니까 MAX로 초기화 안한다
             }
         }
         System.out.println(bfs());
         br.close();
     }
 
+    // 출력테스트
     private static void print() {
         for (int r = 1; r <= N; r++) {
             for (int c = 1; c <= M; c++) {
@@ -44,6 +45,7 @@ public class Main {
             }
             System.out.println();
         }
+        System.out.println("--------");
     }
 
     private static int bfs() {
@@ -60,12 +62,12 @@ public class Main {
                 if(nr<1||nc<1||nr>N||nc>M)  continue;
 
                 if(min[nr][nc] > min[v[0]][v[1]] + map[nr][nc]) {
-                    min[nr][nc] = min[v[0]][v[1]] + map[nr][nc];
-                    queue.add(new int[]{nr,nc});
+                    min[nr][nc] = min[v[0]][v[1]] + map[nr][nc];    // 해당위치까지 벽부수는갯수의 최소값 저장 = 이전 경로의 벽부신갯수 + 현재 벽
+                    queue.add(new int[]{nr,nc});    // 최소로 벽을 부수는 곳을 다음 경로로 탐색하기 위해 큐에 넣어준다
                 }
-               // print();
+                //print();
             }
         }
-        return min[N][M];
+        return min[N][M];   // 마지막에 저장된 최소값은 N,M 위치까지 도달했을때 벽을 부순 최소값
     }
 }
