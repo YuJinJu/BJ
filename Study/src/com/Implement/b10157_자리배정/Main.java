@@ -1,4 +1,4 @@
-package com.array.b10157_자리배정;
+package com.Implement.b10157_자리배정;
 
 import java.io.*;
 import java.util.StringTokenizer;

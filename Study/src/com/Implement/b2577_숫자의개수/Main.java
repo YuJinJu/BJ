@@ -1,4 +1,4 @@
-package com.구현.b2577_숫자의개수;
+package com.Implement.b2577_숫자의개수;
 
 import java.util.Scanner;
 

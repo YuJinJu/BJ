@@ -1,4 +1,4 @@
-package com.구현.b8958_OX문제;
+package com.Implement.b8958_OX문제;
 
 import java.util.Scanner;
 

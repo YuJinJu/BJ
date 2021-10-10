@@ -1,4 +1,4 @@
-package com.구현.b3009_네번째점;
+package com.Implement.b3009_네번째점;
 
 import java.util.Scanner;
 

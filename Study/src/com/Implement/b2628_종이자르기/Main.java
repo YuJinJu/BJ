@@ -1,4 +1,4 @@
-package com.array.b2628_종이자르기;
+package com.Implement.b2628_종이자르기;
 
 import java.io.BufferedReader;
 import java.io.IOException;

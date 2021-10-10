@@ -1,8 +1,8 @@
-package com.array.b13300_방배정;
+package com.Implement.b13300_방배정;
 
 import java.util.Scanner;
 
-public class Main {
+public class Main2 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int N = sc.nextInt();   //학생수

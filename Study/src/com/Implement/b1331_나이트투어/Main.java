@@ -1,7 +1,8 @@
-package com.구현.b1331_나이트투어;
+package com.Implement.b1331_나이트투어;
 
 import java.util.Scanner;
 
+//nightTour를 8방 탐색으로 하는 방법
 public class Main {
     static int[][] map = new int[6][6];
     //우하 우상 하우 하좌 좌하 좌상 상우 상좌

@@ -1,4 +1,4 @@
-package com.구현.b1152_단어의개수;
+package com.Implement.b1152_단어의개수;
 
 import java.util.ArrayList;
 import java.util.Scanner;

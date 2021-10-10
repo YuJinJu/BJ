@@ -1,19 +1,16 @@
-package com.array.b2669_직사각형네개의합집합의면적구하기;
+package com.Implement.b2669_직사각형네개의합집합의면적구하기;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
+//min,max 안했을 때
 //오른쪽으로 돌리면 x -> 행, y-> 열
-public class Main {
+public class Main2 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        int minR = Integer.MAX_VALUE;
-        int minC = Integer.MAX_VALUE;
-        int maxR = Integer.MIN_VALUE;
-        int maxC = Integer.MIN_VALUE;
         int [][] map = new int[101][101];
         for (int i = 0; i < 4; i++) {
             StringTokenizer st = new StringTokenizer(br.readLine());
@@ -28,16 +25,11 @@ public class Main {
                     if(map[r][c]!=1) map[r][c] = 1;
                 }
             }
-
-            if(minR > sr) minR = sr;
-            if(minC > sc) minC = sc;
-            if(maxR < er) maxR = er;
-            if(maxC < ec) maxC = ec;
         }
 
         int result = 0;
-        for(int r = minR; r<maxR; r++){
-            for(int c = minC; c<maxC; c++){
+        for(int r = 0; r<100; r++){
+            for(int c = 0; c<100; c++){
                 if(map[r][c] == 1) result++;
             }
         }

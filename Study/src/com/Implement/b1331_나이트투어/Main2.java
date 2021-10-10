@@ -1,7 +1,8 @@
-package com.구현.b1331_나이트투어;
+package com.Implement.b1331_나이트투어;
 
 import java.util.Scanner;
 
+//이전좌표와 현재좌표의 길이의 차이로 판단하여 nightTour 하는 방법
 public class Main2 {
     static int[][] map = new int[6][6];
     static int beforeR = 0;

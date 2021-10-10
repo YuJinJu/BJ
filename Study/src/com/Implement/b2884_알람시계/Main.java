@@ -1,4 +1,4 @@
-package com.구현.b2884_알람시계;
+package com.Implement.b2884_알람시계;
 
 import java.util.Scanner;
 

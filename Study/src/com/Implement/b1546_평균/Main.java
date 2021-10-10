@@ -1,4 +1,4 @@
-package com.구현.b1546_평균;
+package com.Implement.b1546_평균;
 
 import java.util.Scanner;
 
