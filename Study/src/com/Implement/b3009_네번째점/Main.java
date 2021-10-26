@@ -11,8 +11,7 @@ public class Main {
             x[n] = sc.nextInt();
             y[n] = sc.nextInt();
         }
-        int rowL = 0;
-        int columnL = 0;
+
         int [] tmpX = new int[1001];    // 같은숫자가 짝수이면 짝이맞는것
         int [] tmpY = new int[1001];    // 같은숫자가 짝수이면 짝이맞는것
         for (int i = 0; i < 3; i++) {

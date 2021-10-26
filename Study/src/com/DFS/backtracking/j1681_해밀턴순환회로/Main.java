@@ -1,4 +1,4 @@
-package com.backtracking.j1681_해밀턴순환회로;
+package com.DFS.backtracking.j1681_해밀턴순환회로;
 
 import java.io.BufferedReader;
 import java.io.IOException;

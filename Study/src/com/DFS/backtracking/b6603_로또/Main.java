@@ -1,4 +1,4 @@
-package com.backtracking.b6603_로또;
+package com.DFS.backtracking.b6603_로또;
 
 import java.util.Arrays;
 import java.util.Scanner;
